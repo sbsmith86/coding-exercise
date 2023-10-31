@@ -49,6 +49,19 @@ $ yarn run test:cov
 
 ## Important Notes
 1. There is no database for the sake of reducing the number of dependencies for this exercise. All objects are stored in memory, so if you restart the server, they will go away.
-2. Pre-built endpoints for login and signup exist to create users and authenticate them (/auth/login, /auth/signup). Authentication uses bearer tokens.
+2. Pre-built endpoints for login and signup exist to create users and authenticate them (/auth/login, /auth/signup). Authentication uses bearer tokens. Sample curls are below for ease of use.
+  ```
+  curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"test@example.org","password":"testpass123", "tenantId": 1}' \
+  http://localhost:3000/auth/signup && \
+  
+  curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"test@example.org","password":"testpass123", "tenantId": 1}' \
+  http://localhost:3000/auth/login
+  ```
+
+  
 3. If you see something wrong in one of the endpoints, it probably is wrong.
 4. If you have any questions before you begin the exercise, please contact the interviewer.
